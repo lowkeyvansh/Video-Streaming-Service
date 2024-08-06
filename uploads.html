@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Video</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Upload Video</h1>
+        <nav>
+            <a href="/">Home</a>
+        </nav>
+    </header>
+    <main>
+        <form action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+            <label for="title">Title:</label>
+            {{ form.title }}
+            <label for="video">Video:</label>
+            {{ form.video }}
+            {{ form.submit }}
+        </form>
+    </main>
+</body>
+</html>
